@@ -7,7 +7,7 @@ DSEG SEGMENT PARA PUBLIC 'DATA'
 	buff db 100 Dup('$')
 DSEG ENDS
 
-CSEG	SEGMENT PARA PUBLIC 'CODE'
+CSEG SEGMENT PARA PUBLIC 'CODE'
 	ASSUME CS:CSEG, DS: DSEG
 		
 INPUT PROC far
@@ -21,7 +21,6 @@ INPUT PROC far
 	int 21h
 
     mov ah,0ah ; принимаем строку
-    xor di,di
     mov dx,offset buff ; аддрес буфера
     int 21h 
 
